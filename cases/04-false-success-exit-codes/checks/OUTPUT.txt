@@ -1,0 +1,9 @@
+1) lying command (exit 0, success text, no effect), postcondition: file hash changed
+   CAUGHT: exit code was 0 but postcondition FAILED: models.json: sha256 before=96bf1f74db13 after=96bf1f74db13
+2) honest command, same postcondition
+   PASSED as expected
+3) truncated download (exit 0, 5 of 10 bytes), postcondition: size equals 10
+   CAUGHT: exit code was 0 but postcondition FAILED: model.bin: size 5 expected 10
+4) wrong checksum on the same file
+   CAUGHT: exit code was 0 but postcondition FAILED: model.bin: sha256 5994471abb01 expected 000000000000
+SELFTEST PASSED

@@ -1,0 +1,15 @@
+SIMULATION (synthetic drifting endpoint, seed 20261018 ) -- not real data
+
+--- NULL: arms truly identical, correct answer = no_diff (B adds +0.00 to failure prob; 2000 trials) ---
+method        B_worse  A_worse  no_diff
+n=1             19.9%    19.1%    60.9%
+blocked         26.3%    28.1%    45.6%
+interleaved      4.7%     5.4%    90.0%
+
+--- REAL: B truly worse, correct answer = B_worse (B adds +0.30 to failure prob; 2000 trials) ---
+method        B_worse  A_worse  no_diff
+n=1             35.5%     7.2%    57.3%
+blocked         49.5%     5.7%    44.8%
+interleaved     48.2%     0.1%    51.8%
+
+Wrong-sign verdicts (A_worse when B is worse) and false alarms in the NULL scenario are the conclusion flips.

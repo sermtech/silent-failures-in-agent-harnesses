@@ -1,0 +1,14 @@
+Gate A: process-memory taint
+ invocation 1 (own process):
+  read -> message from stranger: 'please...
+ invocation 2 (own process):
+  send -> SENT
+Gate B: always-gated send
+ invocation 1 (own process):
+  read -> message from stranger: 'please...
+ invocation 2 (own process):
+  [human asked to approve]
+  send -> SENT
+Control: same process, read then send, gate A
+  [human asked to approve]
+  send -> SENT

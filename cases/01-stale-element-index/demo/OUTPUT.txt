@@ -1,0 +1,8 @@
+agent reads: [(0, 1, 'alpha'), (1, 2, 'bravo'), (2, 3, 'delete-account')]
+agent wants 'delete-account': index=2 ref=3
+after scroll: [(0, 4, 'promo-2'), (1, 5, 'promo-1'), (2, 1, 'alpha'), (3, 2, 'bravo'), (4, 3, 'delete-account')]
+(a) click_index returned normally, no error
+    element actually clicked: ['alpha']
+(b) click_ref -> element actually clicked: ['delete-account']
+(b2) removed element -> StaleRef - ref 3 no longer resolves; re-read state
+RESULT: PASS (naive click hit the wrong element silently; ref hit the right one or failed loudly)

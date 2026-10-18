@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><body style="height:3000px">
+<ul id="list">
+  <li><button class="item">alpha</button></li>
+  <li><button class="item">bravo</button></li>
+  <li><button class="item">delete-account</button></li>
+</ul>
+<pre id="log"></pre>
+<script>
+var n = 0, done = false;
+function add(name) { var li = document.createElement("li"), b = document.createElement("button");
+  b.className = "item"; b.textContent = name; li.appendChild(b); document.getElementById("list").prepend(li); }
+document.addEventListener("click", function (e) {   // record which button was really clicked
+  if (e.target.className === "item") document.getElementById("log").textContent += e.target.textContent + "\n"; });
+// re-render on first scroll: two new items land ABOVE everything else
+window.addEventListener("scroll", function () { if (!done) { done = true; add("promo-1"); add("promo-2"); } });
+</script></body></html>
